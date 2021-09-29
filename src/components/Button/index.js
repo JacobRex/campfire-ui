@@ -1,3 +1,3 @@
-import CButton from './Button.vue';
+import CButton from './src/Button.vue';
 
 export default CButton;

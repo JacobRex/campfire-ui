@@ -1,3 +1,3 @@
-import CLabel from './Label.vue';
+import CLabel from './src/Label.vue';
 
 export default CLabel;

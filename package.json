@@ -1,10 +1,7 @@
 {
   "name": "campfire-ui",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": false,
-  "main": "dist/campfire-ui.umd.min.js",
-  "unpkg": "dist/campfire-ui.umd.min.js",
-  "jsdelivr": "dist/campfire-ui.umd.min.js",
   "author": "Jacob Rex",
   "license": "MIT",
   "description": "Gather round & build apps!",
@@ -22,7 +19,7 @@
   },
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name campfire-ui src/main.js",
+    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "prepublishOnly": "$npm_execpath build"
   },
