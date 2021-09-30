@@ -1,8 +1,8 @@
 <template>
   <span
     :class="[
-      'Label',
-      `Label--${variant}`,
+      $s.Label,
+      $s[`variant__${variant}`],
     ]"
     @click="emitClick"
   >
@@ -42,36 +42,36 @@ export default {
 };
 </script>
 
-<style scoped>
+<style module="s">
 .Label {
   display: inline-flex;
   align-items: center;
   padding: 4px 8px;
 }
 
-.Label--normal {
+.variant__normal {
   color: black;
   background: #dedede;
 }
 
-.Label--bold {
+.variant__bold {
   color: white;
   background: black;
 }
 
-.Label--positive {
+.variant__positive {
   color: white;
   background: green;
   border: 2px solid green;
 }
 
-.Label--important {
+.variant__important {
   color: white;
   background: orange;
   border: 2px solid orange;
 }
 
-.Label--critical {
+.variant__critical {
   color: white;
   background: red;
   border: 2px solid red;

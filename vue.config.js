@@ -1,7 +1,6 @@
 const glob = require('glob');
 const path = require('path');
-const { resolve } = require('path');
-const rootDir = process.cwd();
+const BuildHash = '🚴‍♂️' + (process.env.npm_package_version || '').replace('.', '-');
 
 const componentFiles = (() => {
   const components = glob.sync('components/**/[A-Z]*/index.js', { cwd: path.resolve('./src') });
@@ -14,20 +13,20 @@ const componentFiles = (() => {
 })();
 
 module.exports = {
-  css: {
-    extract: false,
-  },
   filenameHashing: false,
+  css: {
+    requireModuleExtension: false,
+    loaderOptions: {
+      css: {
+        modules: {
+          localIdentName: `v${BuildHash}_[name]_[hash]`
+        },
+      }
+    },
+  },
   configureWebpack: {
     entry: {
       ...componentFiles,
     },
-    resolve: {
-      extensions: ['.js'],
-      alias: {
-        '@campfire-ui': resolve(rootDir, 'src'),
-      },
-    },
-    
   }
 };

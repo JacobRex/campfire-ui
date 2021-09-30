@@ -1,8 +1,8 @@
 <template>
   <button
     :class="[
-      'Button',
-      `Button--${variant}`
+      $s.Button,
+      $s[`variant__${variant}`]
     ]"
     @click="emitClick()"
   >
@@ -40,8 +40,7 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style module="s">
 .Button {
   margin: 0; /* Remove vertical margin in Safari */
   padding: 8px 16px;
@@ -57,24 +56,25 @@ export default {
   -webkit-tap-highlight-color: transparent;
 }
 
-.Button--normal {
+/* Variants */
+.variant__normal {
   color: black;
   border: 2px solid black;
 }
 
-.Button--bold {
+.variant__bold {
   color: white;
   background: black;
   border: 2px solid black;
 }
 
-.Button--muted {
+.variant__muted {
   color: black;
   background: #dedede;
   border: 2px solid #dedede;
 }
 
-.Button--critical {
+.variant__critical {
   color: white;
   background: red;
   border: 2px solid red;
