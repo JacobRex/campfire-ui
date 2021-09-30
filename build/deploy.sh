@@ -4,20 +4,14 @@ set -e
 
 # echo "1. Building files";
 npm run build
-cp package.json ./dist
-cd ./dist
 
 #echo "2. Orgaizing files";
-mv css/components/$files styles/
-mv js/components/$files components/
+mv dist/css/components/$files dist/styles/
+mv dist/js/components/$files dist/components/
 
-rm -r css
-rm -r js
-rm index.html
+rm -r dist/css
+rm -r dist/js
+rm dist/index.html
 
 #echo "3. Publishing";
 npm publish
-
-#echo "4. Cleaning up";
-rm package.json
-cd ../

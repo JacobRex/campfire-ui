@@ -1,6 +1,6 @@
 const glob = require('glob');
 const path = require('path');
-const BuildHash = '🚴‍♂️' + (process.env.npm_package_version || '').replace('.', '-');
+const BuildHash = (process.env.npm_package_version || '').replace('.', '-');
 
 const componentFiles = (() => {
   const components = glob.sync('components/**/[A-Z]*/index.js', { cwd: path.resolve('./src') });
