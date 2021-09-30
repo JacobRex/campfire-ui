@@ -6,12 +6,14 @@ set -e
 npm run build
 
 #echo "2. Orgaizing files";
-mv dist/css/components/$files dist/styles/
-mv dist/js/components/$files dist/components/
+cp package.json ./dist
+cd ./dist
+mv css/components/$files styles/
+mv js/components/$files components/
 
-rm -r dist/css
-rm -r dist/js
-rm dist/index.html
+rm -r css
+rm -r js
+rm index.html
 
 #echo "3. Publishing";
 npm publish
