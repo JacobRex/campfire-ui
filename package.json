@@ -1,13 +1,13 @@
 {
   "name": "campfire-ui",
-  "version": "0.2.3",
+  "version": "0.2.5",
   "private": false,
   "author": "Jacob Rex",
   "license": "MIT",
   "description": "Gather round & build apps!",
   "files": [
-    "components",
-    "*.{css,css.map}"
+    "dist/css",
+    "dist/js/components"
   ],
   "homepage": "",
   "repository": {
