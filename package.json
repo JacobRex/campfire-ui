@@ -1,13 +1,13 @@
 {
   "name": "campfire-ui",
-  "version": "0.2.5",
+  "version": "0.2.9",
   "private": false,
   "author": "Jacob Rex",
   "license": "MIT",
   "description": "Gather round & build apps!",
   "files": [
-    "dist/css",
-    "dist/js/components"
+    "css",
+    "js/components"
   ],
   "homepage": "",
   "repository": {
@@ -20,9 +20,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build:clean": "rm $(build/outputFiles.js)",
     "lint": "vue-cli-service lint",
-    "prepublishOnly": "$npm_execpath build"
+    "deploy": "build/deploy.sh"
   },
   "dependencies": {
     "core-js": "^3.6.5",
